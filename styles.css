@@ -8,35 +8,38 @@
 .container{
     width: 100%;
     height: 100vh;
-    background: #2c3e50; 
+    background: #2c3e50; /* Background dark blue-gray */
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .calculator{
-    background: #ecf0f1; 
+    background: #ecf0f1; /* Light gray background for calculator */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%; /* Responsive width */
 }
 
 .calculator form input{
     outline: 0;
-    width: 60px;
+    width: 20%;
     height: 60px;
     border-radius: 10px;
     box-shadow: -8px -8px 15px rgba(255,255,255,0.5), -5px -8px 15px rgba(0,0,0,0.2);
-    background: #3498db; 
+    background: #3498db; /* Blue background for buttons */
     font-size: 20px;
-    color: #fff; 
+    color: #fff; /* White text for numbers */
     cursor: pointer;
-    margin: 10px;
+    margin: 10px 5px;
     transition: background 0.3s ease;
 }
 
 .calculator form input:hover{
-    background: #2980b9; 
+    background: #2980b9; /* Darker blue on hover */
 }
 
 form .display{
@@ -53,25 +56,60 @@ form .display input{
     border: 2px solid #2c3e50;
     border-radius: 10px;
     padding-right: 10px;
-    background: #bdc3c7; 
-    color: #2c3e50; 
+    background: #bdc3c7; /* Light gray background for display */
+    color: #2c3e50; /* Dark text color for display */
 }
 
 form input.equal{
-    width: 145px;
-    background: #e74c3c; 
+    width: calc(40% - 20px);
+    background: #e74c3c; /* Red background for equal button */
     color: #fff;
 }
 
 form input.equal:hover{
-    background: #c0392b; 
+    background: #c0392b; /* Darker red on hover */
 }
 
 form input.operator{
-    background: #f39c12; 
+    background: #f39c12; /* Orange background for operators */
     color: #fff;
 }
 
 form input.operator:hover{
-    background: #e67e22; 
+    background: #e67e22; /* Darker orange on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .calculator form input {
+        width: 22%;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    form .display input {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    .calculator form input {
+        width: 23%;
+        height: 45px;
+        font-size: 16px;
+        margin: 8px 4px;
+    }
+
+    form .display input {
+        font-size: 30px;
+        padding-right: 8px;
+    }
+
+    form input.equal {
+        width: calc(46% - 16px);
+    }
 }
